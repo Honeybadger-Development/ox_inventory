@@ -1,35 +1,39 @@
 return {
-	{
-        name = 'debug_crafting',
+    
+	{ -- Salvage Exchange (Example)
+		name = 'salvage-exchange',
+		label = 'Salvage Exchange',
 		items = {
 			{
-				name = 'lockpick',
+				name = 'rubber',
 				ingredients = {
-					scrapmetal = 5,
-					WEAPON_HAMMER = 0.05
+					salvagedparts = 8,
 				},
 				duration = 5000,
-				count = 2,
-			},
-		},
-		points = {
-			vec3(-1147.083008, -2002.662109, 13.180260),
-			vec3(-345.374969, -130.687088, 39.009613)
-		},
-		zones = {
-			{
-				coords = vec3(-1146.2, -2002.05, 13.2),
-				size = vec3(3.8, 1.05, 0.15),
-				distance = 1.5,
-				rotation = 315.0,
+				count = 16,
 			},
 			{
-				coords = vec3(-346.1, -130.45, 39.0),
-				size = vec3(3.8, 1.05, 0.15),
-				distance = 1.5,
-				rotation = 70.0,
+				name = 'plastic',
+				ingredients = {
+					salvagedparts = 3,
+				},
+				duration = 5000,
+				count = 32,
 			},
 		},
-		blip = { id = 566, colour = 31, scale = 0.8 },
+		peds = {
+			{
+				model = 's_m_m_gardener_01',
+				coords = vec3(2350.925, 3145.093, 47.209),
+				heading = 169.500,
+				distance = 2.0,
+				renderDistance = 25.0,
+				label = 'Salvage Exchange',
+				icon = 'fas fa-ring',
+				animation = 'WORLD_HUMAN_LEANING',
+			},
+		},
 	},
+
+    
 }
