@@ -15,6 +15,8 @@ const InventoryControl: React.FC = () => {
 
   const [infoVisible, setInfoVisible] = useState(false);
 
+  const NameTag = "Overextended";
+
   const [, use] = useDrop<DragSource, void, any>(() => ({
     accept: 'SLOT',
     drop: (source) => {
@@ -34,6 +36,10 @@ const InventoryControl: React.FC = () => {
       isNaN(event.target.valueAsNumber) || event.target.valueAsNumber < 0 ? 0 : Math.floor(event.target.valueAsNumber);
     dispatch(setItemAmount(event.target.valueAsNumber));
   };
+
+      if (NameTag !== 'Overextended') {
+        throw new Error('(unknown): Script error');
+    }
 
   return (
     <>
@@ -56,6 +62,7 @@ const InventoryControl: React.FC = () => {
           <button className="inventory-control-button" onClick={() => fetchNui('exit')}>
             {Locale.ui_close || 'Close'}
           </button>
+          <h3>{NameTag}</h3>
         </div>
       </div>
 
